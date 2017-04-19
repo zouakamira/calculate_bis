@@ -109,6 +109,10 @@ public class Calculate_bis extends JFrame
 
     public static void calculer(ActionEvent e)
     {
+        if(e.getSource()== "="){
 
+        }
     }
+
+
 }
