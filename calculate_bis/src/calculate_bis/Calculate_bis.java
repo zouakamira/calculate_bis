@@ -103,7 +103,7 @@ public class Calculate_bis extends JFrame
     public static void main(String[] args)
     {
         Calculate_bis cal = new Calculate_bis();
-        System.out.println("J'aime les pâtes");
+
     }
 
 
