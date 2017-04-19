@@ -25,6 +25,7 @@ public class Calculate_bis extends JFrame
     private final Dimension operateurDimension;
     private final JLabel labelaffich;
 
+    public String nombre = "";
 
     public Calculate_bis()
     {
@@ -126,19 +127,67 @@ public class Calculate_bis extends JFrame
 
 
 
-        switch(action)
+        double val1;
+        double val2 = 0;
+        switch (action)
         {
+            //Nombres
             case "0":
-                System.out.println(action + "ça marche");
+                nombre = nombre + e.getActionCommand();
                 break;
             case "1":
-                System.out.println(action + "ça marche");
+                nombre = nombre + e.getActionCommand();
                 break;
             case "2":
-                System.out.println(action + "ça marche");
+                nombre = nombre + e.getActionCommand();
                 break;
             case "3":
-                System.out.println(action + "ça marche");
+                nombre = nombre + e.getActionCommand();
+                break;
+            case "4":
+                nombre = nombre + e.getActionCommand();
+                break;
+            case "5":
+                nombre = nombre + e.getActionCommand();
+                break;
+            case "6":
+                nombre = nombre + e.getActionCommand();
+                break;
+            case "7":
+                nombre = nombre + e.getActionCommand();
+                break;
+            case "8":
+                nombre = nombre + e.getActionCommand();
+                break;
+            case "9":
+                nombre = nombre + e.getActionCommand();
+                break;
+            //Opérations
+            case ".":
+                System.out.println(action);
+                break;
+            case "=":
+                System.out.println(action);
+                break;
+            case "CE":
+                System.out.println(action);
+                break;
+            case "C":
+                System.out.println(action);
+                break;
+            case "+":
+                val1 = Double.parseDouble(nombre);
+                System.out.println(val1);
+                val1 = val1 + val2;
+                break;
+            case "-":
+                val1 = Double.parseDouble(nombre);
+                break;
+            case "x":
+                val1 = Double.parseDouble(nombre);
+                break;
+            case "/":
+                val1 = Double.parseDouble(nombre);
                 break;
         }
 
