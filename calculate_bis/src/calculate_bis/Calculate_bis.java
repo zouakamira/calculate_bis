@@ -142,6 +142,42 @@ public class Calculate_bis extends JFrame
                 break;
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         double valeurInitiale = 0.0;
         double valeurNouvelle = 0.0;
         String operande = "";
