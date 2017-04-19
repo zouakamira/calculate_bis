@@ -156,15 +156,12 @@ public class Calculate_bis extends JFrame
             break;
             case "-":
                 var = valI - valN;
-                
             break;
             case "*":
                 var = valI * valN;
-                
             break;
             case "/":
                 var = valI / valN;
-                
             break;
             default: return 0.0;
         }
