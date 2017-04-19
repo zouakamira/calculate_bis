@@ -7,6 +7,8 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,6 +26,7 @@ public class Calculate_bis extends JFrame
     private final Dimension chiffreDimension;
     private final Dimension operateurDimension;
     private final JLabel labelaffich;
+    private ArrayList liste = new ArrayList();
 
     public String nombre = "";
     public double val2 = 0;
@@ -74,6 +77,9 @@ public class Calculate_bis extends JFrame
         for (String s : boutonsLabel)
         {
             JButton jb = new JButton(s);
+            // coleur aleatoire
+
+            jb.setBackground(colorChange());//change button color
             jb.setPreferredSize(this.chiffreDimension);
             panneauBoutons.add(jb);
             jb.addActionListener(new ActionListener() {
@@ -89,6 +95,7 @@ public class Calculate_bis extends JFrame
         for (String s : operationsLabel)
         {
             JButton jb = new JButton(s);
+            jb.setBackground(colorChange());
             jb.setPreferredSize(this.operateurDimension);
             panneauOperations.add(jb);
             jb.addActionListener(new ActionListener() {
@@ -247,5 +254,26 @@ public class Calculate_bis extends JFrame
     public void afficher(double resultat){
         this.labelaffich.setText(String.valueOf(resultat));
     }
+    //methode pour changer couleur
+    public Color colorChange(){
+        Random rand = new Random();
 
+        int redValue = generateRandom(100, 255, liste);
+        int greenValue =generateRandom(100, 255, liste);
+        int blueValue = generateRandom(100, 255, liste);
+        Color clr = new Color(redValue, greenValue, blueValue);
+        return clr;
+    }
+
+    public int generateRandom(int start, int end, ArrayList<Integer> excludeRows) {
+        Random rand = new Random();
+        int range = end - start + 1;
+
+        int random = rand.nextInt(range) + 1;
+        while(excludeRows.contains(random)) {
+            random = rand.nextInt(range) + 1;
+        }
+
+        return random;
+    }
 }
