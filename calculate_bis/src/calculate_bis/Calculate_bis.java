@@ -23,6 +23,8 @@ public class Calculate_bis extends JFrame
     private final JPanel panneauOperations;
     private final Dimension chiffreDimension;
     private final Dimension operateurDimension;
+    private final JLabel labelaffich;
+
 
     public Calculate_bis()
     {
@@ -34,7 +36,8 @@ public class Calculate_bis extends JFrame
         this.panneauEcran = new JPanel();
         this.panneauBoutons = new JPanel();
         this.panneauOperations = new JPanel();
-
+       //affiche
+        labelaffich = new JLabel("0");
         // Comportement par défaut à la fermeture
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // Titre
@@ -54,7 +57,8 @@ public class Calculate_bis extends JFrame
                 BorderFactory.createLineBorder(Color.BLACK, 1) // La bordure
         ));
         panneauEcran.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        panneauEcran.add(new JLabel("0"));
+
+        panneauEcran.add(labelaffich);
 
         // Les chiffres
         String[] boutonsLabel = {
@@ -111,8 +115,12 @@ public class Calculate_bis extends JFrame
 
     public void calculer(ActionEvent e)
     {
+        //AFFICHAGE ds l'ecran
+      labelaffich.setText(e.getActionCommand());
+
+
         String action = e.getActionCommand();
-        Switch(action)
+        switch(action)
         {
             case "0":
                 System.out.println(action + "ça marche");
