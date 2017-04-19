@@ -199,7 +199,7 @@ public class Calculate_bis extends JFrame
         double valeurInitiale = 0.0;
         double valeurNouvelle = 0.0;
         String operande = "";
-        double resultat = calcul(valeurInitiale, valeurNouvelle, operande);
+        afficher(calcul(valeurInitiale, valeurNouvelle, operande));
     }
 
     public static double calcul(double valI, double valN, String op) {
@@ -220,6 +220,10 @@ public class Calculate_bis extends JFrame
             default: return 0.0;
         }
         return var;
+    }
+
+    public void afficher(double resultat){
+        this.labelaffich.setText(String.valueOf(resultat));
     }
 
 }
