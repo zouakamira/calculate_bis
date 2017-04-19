@@ -167,13 +167,14 @@ public class Calculate_bis extends JFrame
                 System.out.println(action);
                 break;
             case "=":
-                System.out.println(action);
+                afficher(calcul(valeurInitiale, valeurNouvelle, operande));
                 break;
             case "CE":
                 System.out.println(action);
                 break;
             case "C":
-                System.out.println(action);
+                val2 = 0;
+                nombre = "";
                 break;
             case "+":
                 val1 = Double.parseDouble(nombre);
@@ -217,7 +218,7 @@ public class Calculate_bis extends JFrame
         double valeurInitiale = 0.0;
         double valeurNouvelle = 0.0;
         String operande = "";
-        afficher(calcul(valeurInitiale, valeurNouvelle, operande));
+
     }
 
     public double calcul(double valI, double valN, String op) {
