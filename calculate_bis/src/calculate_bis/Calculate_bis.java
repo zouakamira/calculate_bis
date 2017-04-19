@@ -165,9 +165,7 @@ public class Calculate_bis extends JFrame
             break;
             default: return 0.0;
         }
-
-
-
+        return var;
     }
 
 }
