@@ -72,7 +72,7 @@ public class Calculate_bis extends JFrame
             jb.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    //calculer(e);
+                    calculer(e);
                 }
             });
         }
@@ -87,7 +87,7 @@ public class Calculate_bis extends JFrame
             jb.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    //calculer(e);
+                    calculer(e);
                 }
             });
         }
@@ -107,7 +107,7 @@ public class Calculate_bis extends JFrame
     }
 
 
-    public static void calculer(String e)
+    public static void calculer(ActionEvent e)
     {
 
     }
