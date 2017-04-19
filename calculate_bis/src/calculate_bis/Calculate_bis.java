@@ -220,7 +220,7 @@ public class Calculate_bis extends JFrame
         afficher(calcul(valeurInitiale, valeurNouvelle, operande));
     }
 
-    public static double calcul(double valI, double valN, String op) {
+    public double calcul(double valI, double valN, String op) {
         double var = 0.0;
         switch (op) {
             case "+":
@@ -233,7 +233,10 @@ public class Calculate_bis extends JFrame
                 var = valI * valN;
             break;
             case "/":
-                var = valI / valN;
+                try { var = valI / valN;
+                } catch (ArithmeticException e) {
+                this.labelaffich.setText("ERROR");
+                }
             break;
             default: return 0.0;
         }
