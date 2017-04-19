@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -67,6 +69,12 @@ public class Calculate_bis extends JFrame
             JButton jb = new JButton(s);
             jb.setPreferredSize(this.chiffreDimension);
             panneauBoutons.add(jb);
+            jb.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    //calculer(e);
+                }
+            });
         }
         // Les opérations
         String[] operationsLabel = {"CE", "C", "+", "-", "x", "/"};
@@ -76,6 +84,12 @@ public class Calculate_bis extends JFrame
             JButton jb = new JButton(s);
             jb.setPreferredSize(this.operateurDimension);
             panneauOperations.add(jb);
+            jb.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    //calculer(e);
+                }
+            });
         }
 
         // Le contenu global
@@ -92,4 +106,8 @@ public class Calculate_bis extends JFrame
         System.out.println("J'aime les pâtes");
     }
 
+
+    public static void calculer(String e){
+
+    }
 }
