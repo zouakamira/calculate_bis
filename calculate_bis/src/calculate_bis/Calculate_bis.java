@@ -117,7 +117,7 @@ public class Calculate_bis extends JFrame
     public void calculer(ActionEvent e)
     {
         //AFFICHAGE ds l'ecran
-      labelaffich.setText(e.getActionCommand());
+
 
 
         String action = e.getActionCommand();
@@ -190,37 +190,6 @@ public class Calculate_bis extends JFrame
                 val1 = Double.parseDouble(nombre);
                 break;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
