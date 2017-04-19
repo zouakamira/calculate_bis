@@ -13,7 +13,8 @@ import javax.swing.JPanel;
 
 
 
-public class Calculate_bis extends JFrame {
+public class Calculate_bis extends JFrame
+{
 
     private final JPanel content;
     private final JPanel panneauEcran;
@@ -22,7 +23,8 @@ public class Calculate_bis extends JFrame {
     private final Dimension chiffreDimension;
     private final Dimension operateurDimension;
 
-    public Calculate_bis() {
+    public Calculate_bis()
+    {
         // La dimension des boutons
         this.operateurDimension = new Dimension(100, 80);
         this.chiffreDimension = new Dimension(120, 60);
@@ -43,7 +45,8 @@ public class Calculate_bis extends JFrame {
         this.setVisible(true);
     }
 
-    private void initComponents() {
+    private void initComponents()
+    {
         // L'affichage : on crée des bordures autour du panneau d'affichage de l'écran
         panneauEcran.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createEmptyBorder(5, 5, 5, 5), // Le padding
@@ -60,7 +63,8 @@ public class Calculate_bis extends JFrame {
             "0", ".", "="
         };
         panneauBoutons.setLayout(new GridLayout(4, 3, 2, 2));
-        for (String s : boutonsLabel) {
+        for (String s : boutonsLabel)
+        {
             JButton jb = new JButton(s);
             jb.setPreferredSize(this.chiffreDimension);
             panneauBoutons.add(jb);
@@ -68,7 +72,8 @@ public class Calculate_bis extends JFrame {
         // Les opérations
         String[] operationsLabel = {"CE", "C", "+", "-", "x", "/"};
         panneauOperations.setLayout(new GridLayout(3, 2, 3, 3));
-        for (String s : operationsLabel) {
+        for (String s : operationsLabel)
+        {
             JButton jb = new JButton(s);
             jb.setPreferredSize(this.operateurDimension);
             panneauOperations.add(jb);
@@ -82,9 +87,10 @@ public class Calculate_bis extends JFrame {
         this.setContentPane(content);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         Calculate_bis cal = new Calculate_bis();
-
+        System.out.println("J'aime les pâtes");
     }
 
 }
