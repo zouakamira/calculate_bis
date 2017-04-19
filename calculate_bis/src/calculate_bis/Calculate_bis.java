@@ -116,6 +116,8 @@ public class Calculate_bis extends JFrame
     public void calculer(ActionEvent e)
     {
         //AFFICHAGE ds l'ecran
+      labelaffich.setText(e.getActionCommand());
+
 
         String action = e.getActionCommand();
         labelaffich.setText(action);
@@ -138,9 +140,19 @@ public class Calculate_bis extends JFrame
             case "3":
                 System.out.println(action + "ça marche");
                 break;
+        }
 
+        double valeurInitiale = 0.0;
+        double valeurNouvelle = 0.0;
+        String operande = "";
+        double resultat = calcul(valeurInitiale, valeurNouvelle, operande);
+    }
 
-
+    public static double calcul(double valI, double valN, String op) {
+        double var = 0.0;
+        switch (op) {
+            case "+":
+                var = valI + valN;
 
         }
 
