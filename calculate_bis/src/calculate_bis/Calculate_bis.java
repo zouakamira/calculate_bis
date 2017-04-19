@@ -23,8 +23,6 @@ public class Calculate_bis extends JFrame
     private final JPanel panneauOperations;
     private final Dimension chiffreDimension;
     private final Dimension operateurDimension;
-    private final JLabel labelaffich;
-
 
     public Calculate_bis()
     {
@@ -36,8 +34,7 @@ public class Calculate_bis extends JFrame
         this.panneauEcran = new JPanel();
         this.panneauBoutons = new JPanel();
         this.panneauOperations = new JPanel();
-       //affiche
-        labelaffich = new JLabel("0");
+
         // Comportement par défaut à la fermeture
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // Titre
@@ -57,8 +54,7 @@ public class Calculate_bis extends JFrame
                 BorderFactory.createLineBorder(Color.BLACK, 1) // La bordure
         ));
         panneauEcran.setLayout(new FlowLayout(FlowLayout.RIGHT));
-
-        panneauEcran.add(labelaffich);
+        panneauEcran.add(new JLabel("0"));
 
         // Les chiffres
         String[] boutonsLabel = {
@@ -96,12 +92,15 @@ public class Calculate_bis extends JFrame
             });
         }
 
+
         // Le contenu global
         content.setLayout(new BorderLayout(5, 5));
         content.add(panneauEcran, BorderLayout.NORTH);
         content.add(panneauBoutons, BorderLayout.CENTER);
         content.add(panneauOperations, BorderLayout.EAST);
         this.setContentPane(content);
+
+
     }
 
     public static void main(String[] args)
@@ -110,20 +109,27 @@ public class Calculate_bis extends JFrame
         System.out.println("J'aime les pâtes");
     }
 
-
     public void calculer(ActionEvent e)
     {
-        //AFFICHAGE ds l'ecran
-      labelaffich.setText(e.getActionCommand());
-
-
-
-
-
+        String action = e.getActionCommand();
+        Switch(action)
+        {
+            case "0":
+                System.out.println(action + "ça marche");
+                break;
+            case "1":
+                System.out.println(action + "ça marche");
+                break;
+            case "2":
+                System.out.println(action + "ça marche");
+                break;
+            case "3":
+                System.out.println(action + "ça marche");
+                break;
 
 
 
         }
     }
 
-
+}
