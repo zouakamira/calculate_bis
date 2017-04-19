@@ -116,10 +116,13 @@ public class Calculate_bis extends JFrame
     public void calculer(ActionEvent e)
     {
         //AFFICHAGE ds l'ecran
-      labelaffich.setText(e.getActionCommand());
-
 
         String action = e.getActionCommand();
+        labelaffich.setText(action);
+
+
+
+
         switch(action)
         {
             case "0":
@@ -134,6 +137,7 @@ public class Calculate_bis extends JFrame
             case "3":
                 System.out.println(action + "ça marche");
                 break;
+
 
 
 
