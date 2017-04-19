@@ -56,6 +56,7 @@ public class Calculate_bis extends JFrame
         this.pack();
         // Affichage
         this.setVisible(true);
+        this.setMinimumSize(this.getSize());
     }
 
     private void initComponents()
@@ -295,9 +296,12 @@ public class Calculate_bis extends JFrame
     public Color colorChange(){
         Random rand = new Random();
 
-        int redValue = generateRandom(100, 255, liste);
-        int greenValue =generateRandom(100, 255, liste);
-        int blueValue = generateRandom(100, 255, liste);
+        int redValue = generateRandom(0, 255, liste);
+        liste.add(redValue);
+        int greenValue = generateRandom(0, 255, liste);
+        liste.add(greenValue);
+        int blueValue = generateRandom(0, 255, liste);
+        liste.add(blueValue);
         Color clr = new Color(redValue, greenValue, blueValue);
         return clr;
     }
