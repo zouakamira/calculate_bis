@@ -27,6 +27,7 @@ public class Calculate_bis extends JFrame
 
     public String nombre = "";
     public double val2 = 0;
+    public double val1 = 0;
 
     public Calculate_bis()
     {
@@ -128,7 +129,7 @@ public class Calculate_bis extends JFrame
 
 
 
-        double val1;
+
         switch (action)
         {
             //Nombres
@@ -173,6 +174,7 @@ public class Calculate_bis extends JFrame
                 System.out.println(action);
                 break;
             case "C":
+                val1 = 0;
                 val2 = 0;
                 nombre = "";
                 break;
@@ -215,9 +217,7 @@ public class Calculate_bis extends JFrame
 
 
 
-        double valeurInitiale = 0.0;
-        double valeurNouvelle = 0.0;
-        String operande = "";
+
 
     }
 
