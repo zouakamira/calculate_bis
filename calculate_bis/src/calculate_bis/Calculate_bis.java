@@ -26,6 +26,7 @@ public class Calculate_bis extends JFrame
     private final JLabel labelaffich;
 
     public String nombre = "";
+    public double val2 = 0;
 
     public Calculate_bis()
     {
@@ -128,7 +129,6 @@ public class Calculate_bis extends JFrame
 
 
         double val1;
-        double val2 = 0;
         switch (action)
         {
             //Nombres
@@ -177,17 +177,35 @@ public class Calculate_bis extends JFrame
                 break;
             case "+":
                 val1 = Double.parseDouble(nombre);
-                System.out.println(val1);
-                val1 = val1 + val2;
+                nombre = "";
+                val2 = calcul(val1, val2, action);
+                System.out.println(val2);
                 break;
             case "-":
                 val1 = Double.parseDouble(nombre);
+                nombre = "";
+                val2 = calcul(val1, val2, action);
+                System.out.println(val2);
                 break;
             case "x":
+                if(val2 == 0)
+                {
+                    val2 = 1;
+                }
                 val1 = Double.parseDouble(nombre);
+                nombre = "";
+                val2 = calcul(val1, val2, action);
+                System.out.println(val2);
                 break;
             case "/":
+                if(val2 == 0)
+                {
+                    val2 = 1;
+                }
                 val1 = Double.parseDouble(nombre);
+                nombre = "";
+                val2 = calcul(val1, val2, action);
+                System.out.println(val2);
                 break;
         }
 
@@ -211,7 +229,7 @@ public class Calculate_bis extends JFrame
             case "-":
                 var = valI - valN;
             break;
-            case "*":
+            case "x":
                 var = valI * valN;
             break;
             case "/":
