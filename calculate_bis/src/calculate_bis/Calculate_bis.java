@@ -15,6 +15,9 @@ import javax.swing.JPanel;
 
 public class Calculate_bis extends JFrame {
 
+
+
+
     private final JPanel content;
     private final JPanel panneauEcran;
     private final JPanel panneauBoutons;
