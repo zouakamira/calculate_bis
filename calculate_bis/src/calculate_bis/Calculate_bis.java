@@ -29,8 +29,11 @@ public class Calculate_bis extends JFrame
     private ArrayList liste = new ArrayList();
 
     public String nombre = "";
+    public String memoire = "";
     public double val2 = 0;
     public double val1 = 0;
+
+
 
     public Calculate_bis()
     {
@@ -186,36 +189,71 @@ public class Calculate_bis extends JFrame
                 nombre = "";
                 break;
             case "+":
-                val1 = Double.parseDouble(nombre);
-                nombre = "";
-                val2 = calcul(val1, val2, action);
-                System.out.println(val2);
+                if(memoire == "" )
+                {
+                    memoire = action;
+                    val2 = Double.parseDouble(nombre);
+                    nombre = "";
+                }
+                else
+                    {
+                    val1 = Double.parseDouble(nombre);
+                    nombre = "";
+                    val2 = calcul(val1, val2, memoire);
+                    System.out.println(val2);
+                    memoire = action;
+                }
                 break;
             case "-":
-                val1 = Double.parseDouble(nombre);
-                nombre = "";
-                val2 = calcul(val1, val2, action);
-                System.out.println(val2);
+                if(memoire == "" )
+                {
+                    memoire = action;
+                    val2 = Double.parseDouble(nombre);
+                    nombre = "";
+                }
+                else {
+                    val1 = Double.parseDouble(nombre);
+                    nombre = "";
+                    val2 = calcul(val1, val2, memoire);
+                    System.out.println(val2);
+                    memoire = action;
+                }
                 break;
             case "x":
-                if(val2 == 0)
+                if(memoire == "" )
                 {
-                    val2 = 1;
+                    memoire = action;
+                    val2 = Double.parseDouble(nombre);
+                    nombre = "";
                 }
-                val1 = Double.parseDouble(nombre);
-                nombre = "";
-                val2 = calcul(val1, val2, action);
-                System.out.println(val2);
+                else {
+                    if (val2 == 0) {
+                        val2 = 1;
+                    }
+                    val1 = Double.parseDouble(nombre);
+                    nombre = "";
+                    val2 = calcul(val1, val2, memoire);
+                    System.out.println(val2);
+                    memoire = action;
+                }
                 break;
             case "/":
-                if(val2 == 0)
+                if(memoire == "" )
                 {
-                    val2 = 1;
+                    memoire = action;
+                    val2 = Double.parseDouble(nombre);
+                    nombre = "";
                 }
-                val1 = Double.parseDouble(nombre);
-                nombre = "";
-                val2 = calcul(val1, val2, action);
-                System.out.println(val2);
+                else {
+                    if (val2 == 0) {
+                        val2 = 1;
+                    }
+                    val1 = Double.parseDouble(nombre);
+                    nombre = "";
+                    val2 = calcul(val1, val2, memoire);
+                    System.out.println(val2);
+                    memoire = action;
+                }
                 break;
         }
 
@@ -235,7 +273,7 @@ public class Calculate_bis extends JFrame
                 var = valI + valN;
             break;
             case "-":
-                var = valI - valN;
+                var = -(valI - valN);
             break;
             case "x":
                 var = valI * valN;
@@ -246,7 +284,6 @@ public class Calculate_bis extends JFrame
                 this.labelaffich.setText("ERROR");
                 }
             break;
-            default: return 0.0;
         }
         return var;
     }
