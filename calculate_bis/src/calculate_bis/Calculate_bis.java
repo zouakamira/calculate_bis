@@ -167,7 +167,7 @@ public class Calculate_bis extends JFrame
                 System.out.println(action);
                 break;
             case "=":
-                afficher(calcul(valeurInitiale, valeurNouvelle, operande));
+                afficher(calcul(val1, val2, action));
                 break;
             case "CE":
                 System.out.println(action);
