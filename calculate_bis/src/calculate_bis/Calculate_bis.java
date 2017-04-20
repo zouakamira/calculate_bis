@@ -16,9 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
-
-public class Calculate_bis extends JFrame
-{
+public class Calculate_bis extends JFrame {
     private final JPanel content;
     private final JPanel panneauEcran;
     private final JPanel panneauBoutons;
@@ -34,9 +32,7 @@ public class Calculate_bis extends JFrame
     public double val1 = 0;
 
 
-
-    public Calculate_bis()
-    {
+    public Calculate_bis() {
         // La dimension des boutons
         this.operateurDimension = new Dimension(100, 80);
         this.chiffreDimension = new Dimension(120, 60);
@@ -45,7 +41,7 @@ public class Calculate_bis extends JFrame
         this.panneauEcran = new JPanel();
         this.panneauBoutons = new JPanel();
         this.panneauOperations = new JPanel();
-       //affiche
+        //affiche
         labelaffich = new JLabel("0");
         // Comportement par défaut à la fermeture
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,8 +55,7 @@ public class Calculate_bis extends JFrame
         this.setMinimumSize(this.getSize());
     }
 
-    private void initComponents()
-    {
+    private void initComponents() {
         // L'affichage : on crée des bordures autour du panneau d'affichage de l'écran
         panneauEcran.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createEmptyBorder(5, 5, 5, 5), // Le padding
@@ -72,14 +67,13 @@ public class Calculate_bis extends JFrame
 
         // Les chiffres
         String[] boutonsLabel = {
-            "7", "8", "9",
-            "4", "5", "6",
-            "1", "2", "3",
-            "0", ".", "="
+                "7", "8", "9",
+                "4", "5", "6",
+                "1", "2", "3",
+                "0", ".", "="
         };
         panneauBoutons.setLayout(new GridLayout(4, 3, 2, 2));
-        for (String s : boutonsLabel)
-        {
+        for (String s : boutonsLabel) {
             JButton jb = new JButton(s);
             // coleur aleatoire
 
@@ -96,8 +90,7 @@ public class Calculate_bis extends JFrame
         // Les opérations
         String[] operationsLabel = {"CE", "C", "+", "-", "x", "/"};
         panneauOperations.setLayout(new GridLayout(3, 2, 3, 3));
-        for (String s : operationsLabel)
-        {
+        for (String s : operationsLabel) {
             JButton jb = new JButton(s);
             //jb.setBackground(colorChange());
             jb.setPreferredSize(this.operateurDimension);
@@ -119,31 +112,21 @@ public class Calculate_bis extends JFrame
         this.setContentPane(content);
 
 
-
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Calculate_bis cal = new Calculate_bis();
         System.out.println("J'aime les pâtes");
     }
 
-    public void calculer(ActionEvent e)
-    {
+    public void calculer(ActionEvent e) {
         //AFFICHAGE ds l'ecran
-
 
 
         String action = e.getActionCommand();
 
 
-
-
-
-
-
-        switch (action)
-        {
+        switch (action) {
             //Nombres
             case "0":
                 nombre = nombre + e.getActionCommand();
@@ -187,19 +170,17 @@ public class Calculate_bis extends JFrame
                 break;
             //Opérations
             case ".":
-                if (!nombre.contains(".")){
+                if (!nombre.contains(".")) {
                     nombre = nombre + e.getActionCommand();
                     labelaffich.setText(nombre);
                 }
                 break;
             case "=":
-                if(memoire == "" )
-                {
+                if (memoire == "") {
                     memoire = action;
                     val2 = Double.parseDouble(nombre);
                     nombre = "";
-                }
-                else {
+                } else {
                     val1 = Double.parseDouble(nombre);
                     nombre = "";
                     val2 = calcul(val1, val2, memoire);
@@ -207,7 +188,7 @@ public class Calculate_bis extends JFrame
                     System.out.println(val2);
                     val1 = 0.0;
                     val2 = 0.0;
-                    memoire ="";
+                    memoire = "";
                 }
 
 
@@ -222,32 +203,49 @@ public class Calculate_bis extends JFrame
                 labelaffich.setText(nombre);
                 break;
             case "+":
-                if(memoire == "" )
-                {
+
+                if (memoire == "") {
                     memoire = action;
-                    val2 = Double.parseDouble(nombre);
+                    if (nombre != "") {
+                        val2 = Double.parseDouble(nombre);
+                    } else {
+                        System.out.println("WOOPS!");
+                    }
                     //labelaffich.setText(nombre+memoire);
                     nombre = "";
-                }
-                else
-                    {
-                    val1 = Double.parseDouble(nombre);
+                } else {
+                    if (nombre != "") {
+                        val1 = Double.parseDouble(nombre);
+                    } else {
+                        System.out.println("WOOPS!");
+                    }
                     nombre = "";
+
                     val2 = calcul(val1, val2, memoire);
                     System.out.println(val2);
                     memoire = action;
+
+
                 }
+
+
                 break;
             case "-":
-                if(memoire == "" )
-                {
+                if (memoire == "") {
                     memoire = action;
-                    val2 = Double.parseDouble(nombre);
+                    if (nombre != "") {
+                        val2 = Double.parseDouble(nombre);
+                    } else {
+                        System.out.println("WOOPS!");
+                    }
                     //labelaffich.setText(nombre+memoire);
                     nombre = "";
-                }
-                else {
-                    val1 = Double.parseDouble(nombre);
+                } else {
+                    if (nombre != "") {
+                        val1 = Double.parseDouble(nombre);
+                    } else {
+                        System.out.println("WOOPS!");
+                    }
                     nombre = "";
                     val2 = calcul(val1, val2, memoire);
                     System.out.println(val2);
@@ -255,20 +253,24 @@ public class Calculate_bis extends JFrame
                 }
                 break;
             case "x":
-                if(memoire == "" )
-                {
+                if (memoire == "") {
                     memoire = action;
-                    val2 = Double.parseDouble(nombre);
+                    if (nombre != "") {
+                        val2 = Double.parseDouble(nombre);
+                    } else {
+                        System.out.println("WOOPS!");
+                    }
                     //labelaffich.setText(nombre+memoire);
                     nombre = "";
-                }
-                else {
-
-                    System.out.println("jrghdtuf");
+                } else {
                     if (val2 == 0) {
                         val2 = 1;
                     }
-                    val1 = Double.parseDouble(nombre);
+                    if (nombre != "") {
+                        val1 = Double.parseDouble(nombre);
+                    } else {
+                        System.out.println("WOOPS!");
+                    }
                     nombre = "";
                     val2 = calcul(val1, val2, memoire);
                     System.out.println(val2);
@@ -276,18 +278,24 @@ public class Calculate_bis extends JFrame
                 }
                 break;
             case "/":
-                if(memoire == "" )
-                {
+                if (memoire == "") {
                     memoire = action;
-                    val2 = Double.parseDouble(nombre);
+                    if (nombre != "") {
+                        val2 = Double.parseDouble(nombre);
+                    } else {
+                        System.out.println("WOOPS!");
+                    }
                     //labelaffich.setText(nombre+memoire);
                     nombre = "";
-                }
-                else {
+                } else {
                     if (val2 == 0) {
                         val2 = 1;
                     }
-                    val1 = Double.parseDouble(nombre);
+                    if (nombre != "") {
+                        val1 = Double.parseDouble(nombre);
+                    } else {
+                        System.out.println("WOOPS!");
+                    }
                     nombre = "";
                     val2 = calcul(val1, val2, memoire);
                     System.out.println(val2);
@@ -295,12 +303,6 @@ public class Calculate_bis extends JFrame
                 }
                 break;
         }
-
-
-
-
-
-
 
 
     }
@@ -310,28 +312,30 @@ public class Calculate_bis extends JFrame
         switch (op) {
             case "+":
                 var = valI + valN;
-            break;
+                break;
             case "-":
                 var = -(valI - valN);
-            break;
+                break;
             case "x":
                 var = valI * valN;
-            break;
+                break;
             case "/":
-                try { var = valI / valN;
+                try {
+                    var = valI / valN;
                 } catch (ArithmeticException e) {
-                this.labelaffich.setText("ERROR");
+                    this.labelaffich.setText("ERROR");
                 }
-            break;
+                break;
         }
         return var;
     }
 
-    public void afficher(double resultat){
+    public void afficher(double resultat) {
         this.labelaffich.setText(String.valueOf(resultat));
     }
+
     //methode pour changer couleur
-    public Color colorChange(){
+    public Color colorChange() {
         Random rand = new Random();
 
         int redValue = generateRandom(0, 255, liste);
@@ -349,7 +353,7 @@ public class Calculate_bis extends JFrame
         int range = end - start + 1;
 
         int random = rand.nextInt(range) + 1;
-        while(excludeRows.contains(random)) {
+        while (excludeRows.contains(random)) {
             random = rand.nextInt(range) + 1;
         }
 
