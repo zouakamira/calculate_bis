@@ -213,12 +213,13 @@ public class Calculate_bis extends JFrame
 
                 break;
             case "CE":
-                System.out.println(action);
+                //!A FAIRE
                 break;
             case "C":
                 val1 = 0;
                 val2 = 0;
-                nombre = "";
+                nombre = "0";
+                labelaffich.setText(nombre);
                 break;
             case "+":
                 if(memoire == "" )
@@ -262,6 +263,8 @@ public class Calculate_bis extends JFrame
                     nombre = "";
                 }
                 else {
+
+                    System.out.println("jrghdtuf");
                     if (val2 == 0) {
                         val2 = 1;
                     }
