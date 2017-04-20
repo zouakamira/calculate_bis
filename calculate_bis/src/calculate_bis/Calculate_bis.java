@@ -119,6 +119,7 @@ public class Calculate_bis extends JFrame
         this.setContentPane(content);
 
 
+
     }
 
     public static void main(String[] args)
@@ -179,7 +180,27 @@ public class Calculate_bis extends JFrame
                 System.out.println(action);
                 break;
             case "=":
-                afficher(calcul(val1, val2, action));
+                if(memoire == "" )
+                {
+                    memoire = action;
+                    val2 = Double.parseDouble(nombre);
+                    nombre = "";
+                }
+                else {
+                    val1 = Double.parseDouble(nombre);
+                    nombre = "";
+                    val2 = calcul(val1, val2, memoire);
+
+                    afficher(val2);
+                    System.out.println(val2);
+                    memoire = action;
+                    val1 = 0.0;
+                    val2 = 0.0;
+                    memoire ="";
+
+                }
+
+
                 break;
             case "CE":
                 System.out.println(action);
