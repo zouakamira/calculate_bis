@@ -83,7 +83,7 @@ public class Calculate_bis extends JFrame
             JButton jb = new JButton(s);
             // coleur aleatoire
 
-            jb.setBackground(colorChange());//change button color
+            //jb.setBackground(colorChange());//change button color
             jb.setPreferredSize(this.chiffreDimension);
             panneauBoutons.add(jb);
             jb.addActionListener(new ActionListener() {
@@ -99,7 +99,7 @@ public class Calculate_bis extends JFrame
         for (String s : operationsLabel)
         {
             JButton jb = new JButton(s);
-            jb.setBackground(colorChange());
+            //jb.setBackground(colorChange());
             jb.setPreferredSize(this.operateurDimension);
             panneauOperations.add(jb);
             jb.addActionListener(new ActionListener() {
@@ -135,7 +135,7 @@ public class Calculate_bis extends JFrame
 
 
         String action = e.getActionCommand();
-        labelaffich.setText(action);
+
 
 
 
@@ -147,37 +147,50 @@ public class Calculate_bis extends JFrame
             //Nombres
             case "0":
                 nombre = nombre + e.getActionCommand();
+                labelaffich.setText(nombre);
                 break;
             case "1":
                 nombre = nombre + e.getActionCommand();
+                labelaffich.setText(nombre);
                 break;
             case "2":
                 nombre = nombre + e.getActionCommand();
+                labelaffich.setText(nombre);
                 break;
             case "3":
                 nombre = nombre + e.getActionCommand();
+                labelaffich.setText(nombre);
                 break;
             case "4":
                 nombre = nombre + e.getActionCommand();
+                labelaffich.setText(nombre);
                 break;
             case "5":
                 nombre = nombre + e.getActionCommand();
+                labelaffich.setText(nombre);
                 break;
             case "6":
                 nombre = nombre + e.getActionCommand();
+                labelaffich.setText(nombre);
                 break;
             case "7":
                 nombre = nombre + e.getActionCommand();
+                labelaffich.setText(nombre);
                 break;
             case "8":
                 nombre = nombre + e.getActionCommand();
+                labelaffich.setText(nombre);
                 break;
             case "9":
                 nombre = nombre + e.getActionCommand();
+                labelaffich.setText(nombre);
                 break;
             //Opérations
             case ".":
-                System.out.println(action);
+                if (!nombre.contains(".")){
+                    nombre = nombre + e.getActionCommand();
+                    labelaffich.setText(nombre);
+                }
                 break;
             case "=":
                 if(memoire == "" )
@@ -190,14 +203,11 @@ public class Calculate_bis extends JFrame
                     val1 = Double.parseDouble(nombre);
                     nombre = "";
                     val2 = calcul(val1, val2, memoire);
-
                     afficher(val2);
                     System.out.println(val2);
-                    memoire = action;
                     val1 = 0.0;
                     val2 = 0.0;
                     memoire ="";
-
                 }
 
 
@@ -215,6 +225,7 @@ public class Calculate_bis extends JFrame
                 {
                     memoire = action;
                     val2 = Double.parseDouble(nombre);
+                    //labelaffich.setText(nombre+memoire);
                     nombre = "";
                 }
                 else
@@ -231,6 +242,7 @@ public class Calculate_bis extends JFrame
                 {
                     memoire = action;
                     val2 = Double.parseDouble(nombre);
+                    //labelaffich.setText(nombre+memoire);
                     nombre = "";
                 }
                 else {
@@ -246,6 +258,7 @@ public class Calculate_bis extends JFrame
                 {
                     memoire = action;
                     val2 = Double.parseDouble(nombre);
+                    //labelaffich.setText(nombre+memoire);
                     nombre = "";
                 }
                 else {
@@ -264,6 +277,7 @@ public class Calculate_bis extends JFrame
                 {
                     memoire = action;
                     val2 = Double.parseDouble(nombre);
+                    //labelaffich.setText(nombre+memoire);
                     nombre = "";
                 }
                 else {
