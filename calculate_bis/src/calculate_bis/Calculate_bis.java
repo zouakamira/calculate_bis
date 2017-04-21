@@ -46,7 +46,7 @@ public class Calculate_bis extends JFrame {
         // Comportement par défaut à la fermeture
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // Titre
-        this.setTitle("Calculette qui pète le feu de ouf");
+        this.setTitle("Calculette");
         // Mise en place du contenu
         this.initComponents();
         this.pack();
@@ -116,7 +116,6 @@ public class Calculate_bis extends JFrame {
 
     public static void main(String[] args) {
         Calculate_bis cal = new Calculate_bis();
-        System.out.println("J'aime les pâtes");
     }
 
     public void calculer(ActionEvent e) {
@@ -321,7 +320,7 @@ public class Calculate_bis extends JFrame {
                 break;
             case "/":
                 try {
-                    var = valI / valN;
+                    var = valN / valI;
                 } catch (ArithmeticException e) {
                     this.labelaffich.setText("ERROR");
                 }
