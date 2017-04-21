@@ -200,14 +200,14 @@ public class Calculate_bis extends JFrame {
 
                 break;
             case "CE":
+
                 String text = labelaffich.getText();
-                String tex = text.substring(0, text.length()-1);
+                String tex = text.substring(0, text.length() - 1);
                 System.out.println(tex);
                 labelaffich.setText(tex);
-                val2 = Double.parseDouble(tex);
-                val2 = Double.parseDouble(tex);
                 nombre = tex;
-                memoire = "";
+
+
                 break;
             case "C":
                 val1 = 0;
