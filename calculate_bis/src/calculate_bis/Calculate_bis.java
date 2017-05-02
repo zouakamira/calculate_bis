@@ -5,7 +5,7 @@ package calculate_bis;
  *  Amira
  *  Jacques,
  *  Christophe
- *  Pascal
+ *  Pascallllll
  */
 import java.awt.BorderLayout;
 import java.awt.Color;
