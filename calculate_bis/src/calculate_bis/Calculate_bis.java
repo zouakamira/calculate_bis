@@ -2,10 +2,10 @@ package calculate_bis;
 
 /**
 *Crée en travail groupé via GitHub et répartit par :
- *  Amira,
+ *  ,
  *  Jacques,
- *  Pascal,
- *  Christophe
+ *  
+ * 
  */
 import java.awt.BorderLayout;
 import java.awt.Color;
